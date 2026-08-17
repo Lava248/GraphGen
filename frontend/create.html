@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphGen-Create Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Title input -->
+<div class="input-group">
+
+    <label for="graphTitle">
+        Graph Title
+    </label>
+
+    <input
+        type="text"
+        id="graphTitle"
+        placeholder="Enter graph title"
+    >
+
+</div>
+<!-- X-Axis Data input -->
+
+<div class="input-group">
+
+    <label for="xData">
+        X-Axis Data
+    </label>
+
+    <input
+        type="text"
+        id="xData"
+        placeholder="Jan, Feb, Mar, Apr"
+    >
+
+</div>
+<!-- Y-Axis Data input -->
+
+<div class="input-group">
+
+    <label for="yData">
+        Y-Axis Data
+    </label>
+
+    <input
+        type="text"
+        id="yData"
+        placeholder="10, 20, 30, 40"
+    >
+
+</div>
+<!-- Graph Type input -->
+<div class="input-group">
+
+    <label for="graphType">
+        Graph Type
+    </label>
+
+    <select id="graphType">
+
+        <option value="line">
+            Line
+        </option>
+
+        <option value="bar">
+            Bar
+        </option>
+
+        <option value="pie">
+            Pie
+        </option>
+
+        <option value="doughnut">
+            Doughnut
+        </option>
+
+        <option value="radar">
+            Radar
+        </option>
+
+        <option value="polarArea">
+            Polar Area
+        </option>
+
+    </select>
+
+</div>
+
+<button id="generateGraph">
+    Generate Graph
+</button>
+    <!-- Canvas -->
+    <div class="chart-container">
+
+    <canvas id="graphCanvas"></canvas>
+
+</div>
+<!-- connect to graph.js -->
+<script src="js/graph.js"></script>
+</body>
+</html>
