@@ -2142,3 +2142,524 @@ header.navbar {
     }
 
 }
+
+/* =========================================================
+   GRAPHGEN HOME PAGE - DARK THEME OVERRIDE
+   ========================================================= */
+
+:root {
+    --bg-main: #07111f;
+    --bg-card: rgba(255, 255, 255, 0.04);
+    --bg-card-hover: rgba(255, 255, 255, 0.07);
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(76, 231, 182, 0.45);
+
+    --text-main: #ffffff;
+    --text-secondary: #9da9b8;
+
+    --primary: #4ce7b6;
+    --secondary: #5cb1f6;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header.navbar {
+    border-bottom: 1px solid var(--border);
+}
+
+.create-button {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: #07111f;
+}
+
+.create-button:hover {
+    background: linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color: #07111f;
+}
+
+
+/* =========================
+   NAVIGATION HOVER
+========================= */
+
+.home-page:hover,
+.features-page:hover,
+.create-page:hover,
+.about-page:hover {
+    color: var(--primary);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    background-color: var(--bg-main);
+}
+
+.hero-tagline {
+    color: var(--primary);
+}
+
+.hero-title {
+    color: var(--text-main);
+}
+
+.hero-title span {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-create-btn {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: #07111f;
+}
+
+.hero-create-btn:hover {
+    background: linear-gradient(
+        90deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color: #07111f;
+
+    border: none;
+    box-shadow: 0 10px 30px rgba(76, 231, 182, 0.25);
+}
+
+.hero-explore-btn {
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-explore-btn:hover {
+    background: rgba(76, 231, 182, 0.08);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 10px 30px rgba(76, 231, 182, 0.12);
+}
+
+
+/* =========================
+   GRAPH TYPES
+========================= */
+
+.graph-types-section {
+    background-color: var(--bg-main);
+}
+
+.section-tagline {
+    color: var(--primary);
+}
+
+.graph-types-heading h2 {
+    color: var(--text-main);
+}
+
+.graph-types-heading > p:last-child {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   GRAPH CARDS
+========================= */
+
+.graph-slide {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(15px);
+}
+
+.graph-slide:hover {
+    border-color: var(--border-hover);
+
+    box-shadow:
+        0 15px 45px rgba(76, 231, 182, 0.12);
+}
+
+.graph-slide h3 {
+    color: var(--text-main);
+}
+
+.graph-slide p {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   GRAPH SWIPER BUTTONS
+========================= */
+
+.graphSwiper .swiper-button-prev,
+.graphSwiper .swiper-button-next {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.graphSwiper .swiper-button-prev:hover,
+.graphSwiper .swiper-button-next:hover {
+    background: rgba(76, 231, 182, 0.12);
+    border-color: var(--primary);
+}
+
+.graphSwiper .swiper-button-prev::after,
+.graphSwiper .swiper-button-next::after {
+    color: var(--primary);
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-section {
+    background-color: var(--bg-main);
+}
+
+.how-heading h2 {
+    color: var(--text-main);
+}
+
+.how-heading > p:last-child {
+    color: var(--text-secondary);
+}
+
+.how-number {
+    color: var(--primary);
+}
+
+.how-content h3 {
+    color: var(--text-main);
+}
+
+.how-content p {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   HOW SLIDE
+========================= */
+
+.how-slide {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================
+   HOW IMAGE
+========================= */
+
+.how-image {
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.mini-graphs img {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
+/* =========================
+   HOW SWIPER BUTTONS
+========================= */
+
+.howSwiper .swiper-button-prev,
+.howSwiper .swiper-button-next {
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.howSwiper .swiper-button-prev:hover,
+.howSwiper .swiper-button-next:hover {
+    background: rgba(76, 231, 182, 0.12);
+    border-color: var(--primary);
+}
+
+.howSwiper .swiper-button-prev::after,
+.howSwiper .swiper-button-next::after {
+    color: var(--primary);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-section {
+    background-color: var(--bg-main);
+}
+
+.features-heading h2 {
+    color: var(--text-main);
+}
+
+.features-heading > p:last-child {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-card {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+    border-color: var(--border-hover);
+
+    box-shadow:
+        0 15px 45px rgba(76, 231, 182, 0.12);
+}
+
+.feature-icon {
+    background: linear-gradient(
+        135deg,
+        #123c38,
+        #12324d
+    );
+}
+
+.feature-number {
+    color: var(--primary);
+}
+
+.feature-card h3 {
+    color: var(--text-main);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   FEATURE HEADING GRADIENT
+========================= */
+
+#part4_1 {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================
+   HOW IT WORKS HEADING
+========================= */
+
+#part_3_1,
+#part_3_2 {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================
+   VISUAL SHOWCASE
+========================= */
+
+.visual-section {
+    background-color: var(--bg-main);
+}
+
+.visual-tagline {
+    color: var(--primary);
+}
+
+.visual-content h2 {
+    color: var(--text-main);
+}
+
+.visual-content h2 span {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.visual-description {
+    color: var(--text-secondary);
+}
+
+.visual-stat strong {
+    color: var(--text-main);
+}
+
+.visual-stat span {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   VISUAL GRAPH CONTAINER
+========================= */
+
+.visual-graph-container {
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(15px);
+}
+
+.visualSwiper .swiper-slide {
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid var(--border);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #050b14;
+    color: var(--text-main);
+}
+
+.footer-brand p {
+    color: var(--text-secondary);
+}
+
+.footer-column h3 {
+    color: var(--text-main);
+}
+
+.footer-column a {
+    color: #8d9aaa;
+}
+
+.footer-column a:hover {
+    color: var(--primary);
+}
+
+#foot_2,
+#foot_3 {
+    color: #718096;
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .menu-btn {
+        color: var(--primary);
+    }
+
+}
