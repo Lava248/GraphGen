@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GraphGen - Create Account</title>
+
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/logo1.1.png" alt="GraphGen Logo">
+                <span>GraphGen</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">Home</a>
+                <a href="create.html">Create Graph</a>
+                <a href="about.html">About</a>
+
+            </nav>
+
+            <a href="login.html" class="nav-create-btn">
+                Login
+            </a>
+
+            <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+        <div class="mobile-menu">
+
+            <a href="index.html">Home</a>
+            <a href="create.html">Create Graph</a>
+            <a href="about.html">About</a>
+
+            <a href="login.html" class="mobile-create">
+                Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= REGISTER ================= -->
+
+    <main class="register-page">
+
+        <div class="register-glow register-glow-one"></div>
+        <div class="register-glow register-glow-two"></div>
+
+        <div class="register-container">
+
+            <!-- LEFT SIDE -->
+
+            <section class="register-intro">
+
+                <span class="register-label">
+                    JOIN GRAPHGEN
+                </span>
+
+                <h1>
+                    Turn Your Data Into
+                    <span>Powerful Visualizations.</span>
+                </h1>
+
+                <p>
+                    Create your GraphGen account and start creating,
+                    customizing and saving beautiful data visualizations.
+                </p>
+
+                <div class="register-points">
+
+                    <div class="register-point">
+                        <span>✓</span>
+                        <p>Create interactive graphs</p>
+                    </div>
+
+                    <div class="register-point">
+                        <span>✓</span>
+                        <p>Customize your visualizations</p>
+                    </div>
+
+                    <div class="register-point">
+                        <span>✓</span>
+                        <p>Save your graphs securely</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+
+            <section class="register-card">
+
+                <div class="card-heading">
+
+                    <h2>Create Account</h2>
+
+                    <p>
+                        Sign up to get started with GraphGen.
+                    </p>
+
+                </div>
+
+
+                <form id="registerForm">
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirmPassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <p id="formMessage" class="form-message"></p>
+
+
+                    <button
+                        type="submit"
+                        class="register-button"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <div class="login-link">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/navbar.js"></script>
+    <script src="js/register.js"></script>
+
+</body>
+
+</html>

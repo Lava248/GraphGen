@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>My Graphs - GraphGen</title>
+
+    <link rel="stylesheet"
+        href="css/navbar.css">
+
+    <link rel="stylesheet"
+        href="css/my-graphs.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html"
+                class="nav-logo">
+
+                <img
+                    src="assets/images/logo1.1.png"
+                    alt="GraphGen Logo">
+
+                <span>
+                    GraphGen
+                </span>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#features">
+                    Features
+                </a>
+
+                <a href="index.html#graph-types">
+                    Graph Types
+                </a>
+
+                <a href="index.html#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="my-graphs.html"
+                    class="active">
+                    My Graphs
+                </a>
+
+            </nav>
+
+
+            <button
+                id="logoutButton"
+                class="nav-create-btn">
+
+                Logout
+
+            </button>
+
+
+            <button
+                class="menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#features">
+                Features
+            </a>
+
+            <a href="index.html#graph-types">
+                Graph Types
+            </a>
+
+            <a href="index.html#how-it-works">
+                How It Works
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="my-graphs.html"
+                class="active">
+                My Graphs
+            </a>
+
+            <a href="create.html"
+                class="mobile-create">
+
+                Create Graph
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="my-graphs-page">
+
+
+        <section class="my-graphs-heading">
+
+            <p class="section-label">
+                YOUR COLLECTION
+            </p>
+
+            <h1>
+                My Graphs
+            </h1>
+
+            <p>
+                View and manage all the graphs
+                you have saved.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             GRAPH CONTAINER
+        ========================== -->
+
+        <section
+            id="graphsContainer"
+            class="graphs-container">
+
+            <p id="loadingMessage">
+                Loading your graphs...
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         CHART.JS
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- =========================
+         NAVBAR JS
+    ========================== -->
+
+    <script src="js/navbar.js"></script>
+
+
+    <!-- =========================
+         MY GRAPHS JS
+    ========================== -->
+
+    <script src="js/my-graphs.js"></script>
+
+
+</body>
+
+</html>
