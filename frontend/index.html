@@ -1,0 +1,906 @@
+<!-- Home Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphGen - Interactive Graph Generator</title>
+
+    <!-- CSS Link -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- AOS CSS -->
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Swiper.js link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+     
+
+
+    <header class="navbar" data-aos="fade-down" data-aos-duration="800">
+        <div class="nav-container">
+            <nav class="navbar">
+                <!-- logo -->
+                <a href="#" class="logo"
+                data-aos="slide-right" data-aos-duration="800">
+                    <img src="assets/images/logo1.1.png" alt="GraphGen Logo">
+                </a>
+                <a href="index.html" class="home-page">Home</a>
+                <a href="features.html" class="features-page">Features</a>
+                <a href="create.html" class="create-page">Create Graph</a>
+                <a href="about.html" class="about-page">About</a>
+            </nav>
+            <!-- Login Buttons -->
+            <div class="login-container">
+                <a href="#login" class="login-button">Login</a>
+                <a href="#create" class="create-button">Get Started</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- home Content -->
+
+
+
+    <section class="hero-section" id="home">
+
+        <div class="hero-container">
+
+            <!-- HERO CONTENT -->
+            <div class="hero-content">
+
+                <p class="hero-tagline" data-aos="fade-down">
+                    Interactive Graph Generator
+                </p>
+
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="150">
+                    Turn Your Data Into
+                    <span>High Impact Visualizations</span>
+                </h1>
+
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    Create, customize and visualize your data
+                    with interactive graphs in just a few clicks.
+                </p>
+
+                <div class="hero-buttons" data-aos="fade-right" data-aos-delay="450">
+
+                    <a href="create.html" class="hero-create-btn">
+                        Create Graph
+                    </a>
+
+                    <a href="#graph-types" class="hero-explore-btn">
+                        Explore Graphs
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO VIDEO -->
+            <div class="hero-video-container" data-aos="fade-left" data-aos-delay="300">
+
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="assets/videos/intro.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     GRAPH TYPES SECTION
+========================= -->
+
+    <section class="graph-types-section" id="graph-types">
+
+        <div class="graph-types-container">
+
+            <!-- SECTION HEADING -->
+
+            <div class="graph-types-heading" data-aos="zoom-out-down" data-aos-duration="800">
+
+                <p class="section-tagline" data-aos="fade-up">
+                    Explore Visualizations
+                </p>
+
+                <h2 id="part_3_1" data-aos="fade-up" data-aos-delay="150">
+                    Choose Your Graph
+                </h2>
+
+                <p>
+                    Visualize your data with multiple interactive
+                    graph types designed for different purposes.
+                </p>
+
+            </div>
+    </section>
+
+    <!-- SWIPER -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <div class="swiper graphSwiper" data-aos="zoom-out-down" data-aos-delay="150">
+
+        <div class="swiper-wrapper data">
+
+
+            <!-- LINE -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/line.jpeg" alt="Line Graph">
+
+                    <h3>Line Chart</h3>
+
+                    <p>
+                        Visualize trends and changes over time.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BAR -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/bar.jpeg" alt="Bar Graph">
+
+                    <h3>Bar Chart</h3>
+
+                    <p>
+                        Compare values between different categories.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PIE -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/pie.jpeg" alt="Pie Graph">
+
+                    <h3>Pie Chart</h3>
+
+                    <p>
+                        Show proportions and percentages clearly.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOUGHNUT -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/doughnut.jpeg" alt="Doughnut Graph">
+
+                    <h3>Doughnut Chart</h3>
+
+                    <p>
+                        Display proportional data in a circular format.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RADAR -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/radar.jpeg" alt="Radar Graph">
+
+                    <h3>Radar Chart</h3>
+
+                    <p>
+                        Compare multiple variables in one visualization.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- POLAR -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/polar.jpeg" alt="Polar Area Graph">
+
+                    <h3>Polar Area Chart</h3>
+
+                    <p>
+                        Compare values using radial segments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCATTER -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/scatter.jpeg" alt="Scatter Graph">
+
+                    <h3>Scatter Chart</h3>
+
+                    <p>
+                        Explore relationships between data points.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUBBLE -->
+
+            <div class="swiper-slide">
+
+                <div class="graph-slide">
+
+                    <img src="assets/images/bubble.jpeg" alt="Bubble Graph">
+
+                    <h3>Bubble Chart</h3>
+
+                    <p>
+                        Represent multiple dimensions using bubble sizes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SWIPER CONTROLS -->
+
+        <div class="swiper-button-prev"></div>
+
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+    </div>
+
+
+    <!-- =========================
+     HOW GRAPHGEN WORKS
+========================= -->
+
+    <section class="how-section" id="how-it-works">
+
+        <div class="how-container">
+
+            <!-- SECTION HEADING -->
+
+            <div class="how-heading">
+
+                <p class="section-tagline">
+                    How It Works
+                </p>
+                
+
+                <h2 id="part_3_2" data-aos="zoom-in-up" data-aos-delay="150">
+                    Create Your Graph in 3 Steps
+                </h2>
+                
+
+                <p>
+                    From entering your data to generating your
+                    final visualization.
+                </p>
+
+            </div>
+
+
+            <!-- HOW SWIPER -->
+
+            <div class="swiper howSwiper" data-aos="zoom-in" data-aos-delay="150">
+
+                <div class="swiper-wrapper">
+
+
+                    <!-- STEP 1 -->
+
+                    <div class="swiper-slide">
+
+                        <div class="how-slide">
+
+                            <div class="how-content" >
+
+                                <span class="how-number">
+                                    01
+                                </span>
+
+                                <h3>
+                                    Input Your Data
+                                </h3>
+
+                                <p>
+                                    Enter your X-axis and Y-axis data
+                                    and customize options such as
+                                    title, background, grid, legend
+                                    and other chart settings.
+                                </p>
+
+                            </div>
+
+
+                            <div class="how-image">
+
+                                <img src="assets/images/1st_step.png" alt="GraphGen Data Input">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STEP 2 -->
+
+                    <div class="swiper-slide">
+
+                        <div class="how-slide">
+
+                            <div class="how-content">
+
+                                <span class="how-number">
+                                    02
+                                </span>
+
+                                <h3>
+                                    Choose Your Graph
+                                </h3>
+
+                                <p>
+                                    Select the graph type that best
+                                    represents your data from
+                                    GraphGen's collection of
+                                    interactive visualizations.
+                                </p>
+
+                            </div>
+
+
+                            <div class="how-image graph-preview">
+
+                                <div class="mini-graphs">
+
+                                    <img src="assets/images/line.jpeg" alt="Various Chart">
+                                    <img src="assets/images/bar.jpeg" alt="Various Chart">
+                                    <img src="assets/images/pie.jpeg" alt="Various Chart">
+                                    <img src="assets/images/bubble.jpeg" alt="Various Chart">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STEP 3 -->
+
+                    <div class="swiper-slide">
+
+                        <div class="how-slide">
+
+                            <div class="how-content">
+
+                                <span class="how-number">
+                                    03
+                                </span>
+
+                                <h3>
+                                    Generate Your Graph
+                                </h3>
+
+                                <p>
+                                    Generate your final visualization
+                                    and turn your data into a clear,
+                                    meaningful and beautiful graph.
+                                </p>
+
+                            </div>
+
+
+                            <div class="how-image">
+
+                                <img src="assets/images/3rd_step.png" alt="Generated Graph">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+
+                <div class="swiper-button-prev how-prev"></div>
+
+                <div class="swiper-button-next how-next"></div>
+
+
+                <!-- PAGINATION -->
+
+                <div class="swiper-pagination how-pagination"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     WHY GRAPHGEN
+========================= -->
+
+    <section class="features-section" id="features">
+
+        <div class="features-container" data-aos="zoom-out-right" data-aos-duration="800">
+
+            <!-- HEADING -->
+
+            <div class="features-heading">
+
+                <p class="section-tagline">
+                    Powerful & Simple
+                </p>
+
+                <h2 id="part4_1" data-aos="zoom-in-down" data-aos-delay="150">
+                    Everything You Need to Visualize Data
+                </h2>
+
+                <p id="part4_2">
+                    GraphGen gives you the tools to transform
+                    raw data into meaningful visualizations.
+                </p>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="features-grid" data-aos="flip-right" data-aos-duration="800">
+
+
+                <!-- FEATURE 1 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📊
+                    </div>
+
+                    <span class="feature-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Interactive Graphs
+                    </h3>
+
+                    <p>
+                        Create clear and interactive visualizations
+                        from your data with ease.
+                    </p>
+
+                </div>
+
+
+                <!-- FEATURE 2 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚙️
+                    </div>
+
+                    <span class="feature-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Easy Customization
+                    </h3>
+
+                    <p>
+                        Customize titles, axes, grid, legends
+                        and other chart properties.
+                    </p>
+
+                </div>
+
+
+                <!-- FEATURE 3 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📈
+                    </div>
+
+                    <span class="feature-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Multiple Graph Types
+                    </h3>
+
+                    <p>
+                        Choose from line, bar, pie, radar,
+                        scatter, bubble and more.
+                    </p>
+
+                </div>
+
+
+                <!-- FEATURE 4 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        💾
+                    </div>
+
+                    <span class="feature-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Save & Download
+                    </h3>
+
+                    <p>
+                        Save your graphs and download your
+                        visualizations whenever you need them.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     PART 5 - VISUAL SHOWCASE
+========================= -->
+
+    <section class="visual-section" id="visual-showcase">
+
+        <div class="visual-container" data-aos="flip-left" data-aos-duration="800">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="visual-content">
+
+                <p class="visual-tagline" >
+                    Data Visualization
+                </p>
+
+                <h2>
+                    Data That
+                    <span>Tells a Story</span>
+                </h2>
+
+                <p class="visual-description">
+                    Transform raw numbers into meaningful,
+                    interactive and beautiful visualizations
+                    with GraphGen.
+                </p>
+
+
+                <!-- STATS -->
+
+                <div class="visual-stats">
+
+                    <div class="visual-stat">
+
+                        <strong>8+</strong>
+
+                        <span>
+                            Graph Types
+                        </span>
+
+                    </div>
+
+
+                    <div class="visual-stat">
+
+                        <strong>100%</strong>
+
+                        <span>
+                            Customizable
+                        </span>
+
+                    </div>
+
+
+                    <div class="visual-stat">
+
+                        <strong>Easy</strong>
+
+                        <span>
+                            To Use
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT GRAPH SWIPER -->
+
+            <div class="visual-graph-container">
+
+                <div class="swiper visualSwiper">
+
+                    <div class="swiper-wrapper">
+
+
+                        <!-- LINE -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/line.jpeg" alt="Line Chart">
+
+                        </div>
+
+
+                        <!-- BAR -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/bar.jpeg" alt="Bar Chart">
+
+                        </div>
+
+
+                        <!-- PIE -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/pie.jpeg" alt="Pie Chart">
+
+                        </div>
+
+
+                        <!-- DOUGHNUT -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/doughnut.jpeg" alt="Doughnut Chart">
+
+                        </div>
+
+
+                        <!-- RADAR -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/radar.jpeg" alt="Radar Chart">
+
+                        </div>
+
+
+                        <!-- POLAR -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/polar.jpeg" alt="Polar Chart">
+
+                        </div>
+
+
+                        <!-- SCATTER -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/scatter.jpeg" alt="Scatter Chart">
+
+                        </div>
+
+
+                        <!-- BUBBLE -->
+
+                        <div class="swiper-slide">
+
+                            <img src="assets/images/bubble.jpeg" alt="Bubble Chart">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PAGINATION -->
+
+                    <div class="swiper-pagination visual-pagination"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     PART 7 - FOOTER
+========================= -->
+
+    <footer class="footer" data-aos="fade-up" data-aos-duration="800">
+
+        <div class="footer-container">
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a href="#" class="footer-logo">
+                    <img src="assets/images/logo1.1.png" alt="GraphGen Logo">
+                </a>
+
+                <p id="foot_1">
+                    Turn your data into high impact visualizations with GraphGen's,
+                    meaningful and interactive graphs.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="footer-column">
+
+                <h3>Navigation</h3>
+
+                <a href="#home">Home</a>
+
+                <a href="#features">Features</a>
+
+                <a href="#graph-types">Graph Types</a>
+
+                <a href="#how-it-works">How It Works</a>
+
+            </div>
+
+
+            <!-- GRAPH TYPES -->
+
+            <div class="footer-column">
+
+                <h3>Graph Types</h3>
+
+                <a href="#graph-types">Line Chart</a>
+
+                <a href="#graph-types">Bar Chart</a>
+
+                <a href="#graph-types">Pie Chart</a>
+
+                <a href="#graph-types">Scatter Chart</a>
+
+                <a href="#graph-types">Bubble Chart</a>
+
+                <a href="#graph-types">Polar Chart</a>
+
+                <a href="#graph-types">Radar Chart</a>
+
+                <a href="#graph-types">Doughnut Chart</a>
+
+            </div>
+
+
+            <!-- PROJECT -->
+
+            <div class="footer-column">
+
+                <h3>GraphGen</h3>
+
+                <a href="#about">About</a>
+
+                <a href="#create">Create Graph</a>
+
+                <a href="#features">Features</a>
+
+                <a href="#">Login</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p id="foot_2">
+                © 2026 GraphGen. All rights reserved.
+            </p>
+
+            <p id="foot_3">
+                Interactive Graph Generator
+            </p>
+
+        </div>
+
+    </footer>
+    <!-- Swiper Library -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- GraphGen Swiper -->
+    <script src="js/swiper.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 100,
+            easing: "ease-out-cubic"
+        });
+    </script>
+
+</body>
+
+</html>
