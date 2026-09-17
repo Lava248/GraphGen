@@ -127,6 +127,15 @@
                     My Graphs
                 </a>
 
+                <!-- Admin Panel -->
+                <a href="admin.html"
+                    id="adminPanelLink"
+                    style="display: none;">
+
+                    Admin Panel
+
+                </a>
+
             </nav>
 
 
@@ -190,6 +199,15 @@
 
             <a href="my-graphs.html">
                 My Graphs
+            </a>
+
+            <!-- Admin Panel -->
+            <a href="admin.html"
+                id="mobileAdminPanelLink"
+                style="display: none;">
+
+                Admin Panel
+
             </a>
 
             <a href="create.html"
@@ -702,6 +720,7 @@
                     stagger: 0.1
 
                 },
+
                 "-=0.4"
             )
 
@@ -731,6 +750,7 @@
                     duration: 0.7
 
                 },
+
                 "-=0.2"
             );
 
@@ -769,6 +789,37 @@
     ========================== -->
 
     <script src="js/graph.js"></script>
+
+
+
+    <!-- =========================
+         ADMIN PANEL VISIBILITY
+    ========================== -->
+
+    <script>
+
+        const currentUser =
+            JSON.parse(localStorage.getItem("user"));
+
+        const adminPanelLink =
+            document.getElementById("adminPanelLink");
+
+        const mobileAdminPanelLink =
+            document.getElementById("mobileAdminPanelLink");
+
+
+        if (
+            currentUser &&
+            currentUser.role === "admin"
+        ) {
+
+            adminPanelLink.style.display = "block";
+
+            mobileAdminPanelLink.style.display = "block";
+
+        }
+
+    </script>
 
 
 </body>

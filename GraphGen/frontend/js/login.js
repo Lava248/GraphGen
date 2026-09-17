@@ -1,77 +1,100 @@
+// =========================
+// LOGIN FORM
+// =========================
+
 const loginForm = document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+loginForm.addEventListener("submit", async (event) => {
 
-    const email = document.getElementById("email").value;
+    event.preventDefault();
+
+    // Get form values
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
-    const formMessage = document.getElementById("formMessage");
+
+
+    // =========================
+    // CHECK FIELDS
+    // =========================
+
+    if (!email || !password) {
+
+        alert("Please enter email and password.");
+
+        return;
+    }
+
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/auth/login", {
-            method: "POST",
+        // =========================
+        // LOGIN API REQUEST
+        // =========================
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+        const response = await fetch(
+            "http://localhost:5000/api/auth/login",
+            {
+                method: "POST",
 
-            body: JSON.stringify({
-                email,
-                password
-            })
-        });
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            }
+        );
+
+
+        // Convert response to JSON
         const data = await response.json();
 
+
+        // =========================
+        // CHECK LOGIN ERROR
+        // =========================
+
         if (!response.ok) {
-            formMessage.textContent = data.message || "Login failed";
+
+            alert(data.message || "Login failed.");
+
             return;
         }
 
-        // Store JWT
-        localStorage.setItem("token", data.token);
 
-        // Store user information
-        localStorage.setItem("user", JSON.stringify(data.user));
+        // =========================
+        // SAVE LOGIN DATA
+        // =========================
 
-        formMessage.style.color = "#00d9ff";
-        formMessage.textContent = "Login successful!";
+        localStorage.setItem(
+            "token",
+            data.token
+        );
 
-        setTimeout(() => {
-            window.location.href = "create.html";
-        }, 800);
+        localStorage.setItem(
+            "user",
+            JSON.stringify(data.user)
+        );
+
+
+        // =========================
+        // LOGIN SUCCESS
+        // =========================
+
+        alert("Login successful!");
+
+        window.location.href = "create.html";
+
 
     } catch (error) {
 
-        formMessage.textContent =
-            "Unable to connect to server.";
+        console.error("Login error:", error);
 
-        console.error(error);
-    }
-});
-
-
-/* =========================
-   SHOW / HIDE PASSWORD
-========================= */
-
-const passwordToggle = document.querySelector(".password-toggle");
-
-passwordToggle.addEventListener("click", () => {
-
-    const passwordInput =
-        document.getElementById(passwordToggle.dataset.target);
-
-    if (passwordInput.type === "password") {
-
-        passwordInput.type = "text";
-        passwordToggle.textContent = "Hide";
-
-    } else {
-
-        passwordInput.type = "password";
-        passwordToggle.textContent = "Show";
+        alert(
+            "Unable to connect to the server. Please try again."
+        );
 
     }
 
