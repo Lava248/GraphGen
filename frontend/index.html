@@ -9,8 +9,9 @@
     <title>GraphGen - Interactive Graph Generator</title>
 
     <!-- CSS Link -->
-
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
     <!-- AOS CSS -->
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
@@ -21,33 +22,124 @@
 
 <body>
     <!-- Navbar -->
-     
 
 
-    <header class="navbar" data-aos="fade-down" data-aos-duration="800">
-        <div class="nav-container">
-            <nav class="navbar">
-                <!-- logo -->
-                <a href="#" class="logo"
-                data-aos="slide-right" data-aos-duration="800">
-                    <img src="assets/images/logo1.1.png" alt="GraphGen Logo">
-                </a>
-                <a href="index.html" class="home-page">Home</a>
-                <a href="features.html" class="features-page">Features</a>
-                <a href="create.html" class="create-page">Create Graph</a>
-                <a href="about.html" class="about-page">About</a>
-            </nav>
-            <!-- Login Buttons -->
-            <div class="login-container">
-                <a href="#login" class="login-button">Login</a>
-                <a href="#create" class="create-button">Get Started</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button class="menu-btn" id="menuBtn">
-                ☰
-            </button>
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html"
+            class="nav-logo"
+            aria-label="GraphGen Home">
+
+            <img src="assets/images/logo1.1.png"
+                alt="GraphGen Logo">
+
+            <span>GraphGen</span>
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-links"
+            aria-label="Main navigation">
+
+            <a href="index.html"
+                class="active">
+                Home
+            </a>
+
+            <a href="index.html#features">
+                Features
+            </a>
+
+            <a href="index.html#graph-types">
+                Graph Types
+            </a>
+
+            <a href="index.html#how-it-works">
+                How It Works
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- Login / Register -->
+        <div class="nav-auth">
+
+            <a href="login.html"
+                class="nav-login-btn">
+                Login
+            </a>
+
+            <a href="register.html"
+                class="nav-register-btn">
+                Get Started
+            </a>
+
         </div>
-    </header>
+
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-btn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu"
+        aria-label="Mobile navigation">
+
+        <a href="index.html"
+            class="active">
+            Home
+        </a>
+
+        <a href="index.html#features">
+            Features
+        </a>
+
+        <a href="index.html#graph-types">
+            Graph Types
+        </a>
+
+        <a href="index.html#how-it-works">
+            How It Works
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="login.html"
+            class="mobile-login">
+            Login
+        </a>
+
+        <a href="register.html"
+            class="mobile-create">
+            Get Started
+        </a>
+
+    </nav>
+
+</header>
+
+
 
     <!-- home Content -->
 
@@ -93,7 +185,7 @@
             <div class="hero-video-container" data-aos="fade-left" data-aos-delay="300">
 
                 <video class="hero-video" autoplay muted loop playsinline>
-                    <source src="assets/videos/intro.mp4" type="video/mp4">
+                    <source src="assets/videos/intro1.mp4" type="video/mp4">
                 </video>
 
             </div>
@@ -322,12 +414,12 @@
                 <p class="section-tagline">
                     How It Works
                 </p>
-                
+
 
                 <h2 id="part_3_2" data-aos="zoom-in-up" data-aos-delay="150">
                     Create Your Graph in 3 Steps
                 </h2>
-                
+
 
                 <p>
                     From entering your data to generating your
@@ -350,7 +442,7 @@
 
                         <div class="how-slide">
 
-                            <div class="how-content" >
+                            <div class="how-content">
 
                                 <span class="how-number">
                                     01
@@ -627,7 +719,7 @@
 
             <div class="visual-content">
 
-                <p class="visual-tagline" >
+                <p class="visual-tagline">
                     Data Visualization
                 </p>
 
@@ -887,6 +979,8 @@
 
     <!-- Main JavaScript -->
     <script src="js/script.js"></script>
+    <!-- Navbar js link -->
+     <script src="js/navbar.js"></script>
 
 
     <!-- AOS JS -->

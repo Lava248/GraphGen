@@ -4,77 +4,104 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>GraphGen - Create Graph</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" href="assets/images/logo1.1.png" type="image/png">
+    <!-- =========================
+         GOOGLE FONT
+    ========================== -->
 
-    <!-- Chart.js -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
+    <link rel="icon"
+        href="assets/images/logo1.1.png"
+        type="image/png">
+
+
+    <!-- =========================
+         CHART.JS
+    ========================== -->
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/create.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <!-- =========================
+         AOS CSS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+
+    <!-- =========================
+         CUSTOM CSS
+    ========================== -->
+
+    <link rel="stylesheet"
+        href="css/create.css">
+
+    <link rel="stylesheet"
+        href="css/navbar.css">
 
 </head>
 
 
 <body>
 
+
     <!-- =========================
          NAVBAR
     ========================== -->
 
     <header class="navbar">
+
         <div class="nav-container">
-            <a href="index.html" class="nav-logo" aria-label="GraphGen Home">
-                <img src="assets/images/logo1.1.png" alt="GraphGen Logo">
-                <span>GraphGen</span>
-            </a>
-            <nav class="nav-links" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="index.html#features">Features</a>
-                <a href="index.html#graph-types">Graph Types</a>
-                <a href="index.html#how-it-works">How It Works</a>
-                <a href="about.html">About</a>
-            </nav>
-            <a href="create.html" class="nav-create-btn active">Create Graph</a>
-            <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-        <nav class="mobile-menu" aria-label="Mobile navigation">
-            <a href="index.html">Home</a>
-            <a href="index.html#features">Features</a>
-            <a href="index.html#graph-types">Graph Types</a>
-            <a href="index.html#how-it-works">How It Works</a>
-            <a href="about.html">About</a>
-            <a href="create.html" class="mobile-create active">Create Graph</a>
-        </nav>
-    </header>
 
-    <!-- Legacy create navbar retained only as a reference. -->
-    <!-- <header class="create-navbar">
 
-        <div class="create-nav-container">
+            <!-- =========================
+                 LOGO
+            ========================== -->
 
-            <a href="index.html" class="create-logo">
+            <a href="index.html"
+                class="nav-logo"
+                aria-label="GraphGen Home">
 
-                <img src="assets/images/logo1.1.png" alt="GraphGen Logo">
+                <img
+                    src="assets/images/logo1.1.png"
+                    alt="GraphGen Logo">
+
+                <span>
+                    GraphGen
+                </span>
 
             </a>
 
 
-            <nav class="create-nav-links">
+            <!-- =========================
+                 DESKTOP NAVIGATION
+            ========================== -->
+
+            <nav class="nav-links"
+                aria-label="Main navigation">
 
                 <a href="index.html">
                     Home
@@ -84,19 +111,116 @@
                     Features
                 </a>
 
-                <a href="create.html" class="active">
-                    Create Graph
+                <a href="index.html#graph-types">
+                    Graph Types
                 </a>
 
-                <a href="index.html#about">
+                <a href="index.html#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="about.html">
                     About
+                </a>
+
+                <a href="my-graphs.html">
+                    My Graphs
+                </a>
+
+                <!-- Admin Panel -->
+                <a href="admin.html"
+                    id="adminPanelLink"
+                    style="display: none;">
+
+                    Admin Panel
+
                 </a>
 
             </nav>
 
+
+            <!-- =========================
+                 CREATE BUTTON
+            ========================== -->
+
+            <a href="create.html"
+                class="nav-create-btn active">
+
+                Create Graph
+
+            </a>
+
+
+            <!-- =========================
+                 MOBILE MENU BUTTON
+            ========================== -->
+
+            <button
+                class="menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
         </div>
 
-    </header> -->
+
+        <!-- =========================
+             MOBILE NAVIGATION
+        ========================== -->
+
+        <nav class="mobile-menu"
+            aria-label="Mobile navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#features">
+                Features
+            </a>
+
+            <a href="index.html#graph-types">
+                Graph Types
+            </a>
+
+            <a href="index.html#how-it-works">
+                How It Works
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="my-graphs.html">
+                My Graphs
+            </a>
+
+            <!-- Admin Panel -->
+            <a href="admin.html"
+                id="mobileAdminPanelLink"
+                style="display: none;">
+
+                Admin Panel
+
+            </a>
+
+            <a href="create.html"
+                class="mobile-create active">
+
+                Create Graph
+
+            </a>
+
+        </nav>
+
+    </header>
+
 
 
     <!-- =========================
@@ -110,7 +234,9 @@
              HEADING
         ========================== -->
 
-        <section class="create-heading" data-aos="fade-up">
+        <section
+            class="create-heading"
+            data-aos="fade-up">
 
             <p class="section-tagline">
                 Interactive Graph Generator
@@ -128,6 +254,7 @@
         </section>
 
 
+
         <!-- =========================
              GRAPH CREATOR
         ========================== -->
@@ -141,14 +268,19 @@
                      LEFT PANEL
                 ========================== -->
 
-                <div class="graph-settings" data-aos="fade-right">
+                <div
+                    class="graph-settings"
+                    data-aos="fade-right">
+
 
                     <h2>
                         Graph Settings
                     </h2>
 
 
-                    <!-- Graph Title -->
+                    <!-- =========================
+                         GRAPH TITLE
+                    ========================== -->
 
                     <div class="input-group">
 
@@ -156,23 +288,56 @@
                             Graph Title
                         </label>
 
-                        <input type="text" id="graphTitle" placeholder="Enter graph title">
+                        <input
+                            type="text"
+                            id="graphTitle"
+                            placeholder="Enter graph title">
 
                     </div>
+
+
+
+                    <!-- =========================
+                         X AXIS TITLE
+                    ========================== -->
+
                     <div class="input-group">
-                        <label for="xAxisTitle">X-Axis Title</label>
-                        <input type="text" id="xAxisTitle" placeholder="Enter X-axis title">
+
+                        <label for="xAxisTitle">
+                            X-Axis Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="xAxisTitle"
+                            placeholder="Enter X-axis title">
+
                     </div>
+
+
+
+                    <!-- =========================
+                         Y AXIS TITLE
+                    ========================== -->
 
                     <div class="input-group">
-                        <label for="yAxisTitle">Y-Axis Title</label>
-                        <input type="text" id="yAxisTitle" placeholder="Enter Y-axis title">
+
+                        <label for="yAxisTitle">
+                            Y-Axis Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="yAxisTitle"
+                            placeholder="Enter Y-axis title">
+
                     </div>
 
 
 
-
-                    <!-- X-Axis Data -->
+                    <!-- =========================
+                         X AXIS DATA
+                    ========================== -->
 
                     <div class="input-group">
 
@@ -180,12 +345,18 @@
                             X-Axis Data
                         </label>
 
-                        <input type="text" id="xData" placeholder="Jan, Feb, Mar, Apr">
+                        <input
+                            type="text"
+                            id="xData"
+                            placeholder="Jan, Feb, Mar, Apr">
 
                     </div>
 
 
-                    <!-- Y-Axis Data -->
+
+                    <!-- =========================
+                         Y AXIS DATA
+                    ========================== -->
 
                     <div class="input-group">
 
@@ -193,12 +364,18 @@
                             Y-Axis Data
                         </label>
 
-                        <input type="text" id="yData" placeholder="10, 20, 30, 40">
+                        <input
+                            type="text"
+                            id="yData"
+                            placeholder="10, 20, 30, 40">
 
                     </div>
 
 
-                    <!-- Graph Type -->
+
+                    <!-- =========================
+                         GRAPH TYPE
+                    ========================== -->
 
                     <div class="input-group">
 
@@ -237,21 +414,28 @@
                     </div>
 
 
+
                     <!-- =========================
                          CUSTOMIZATION
                     ========================== -->
 
                     <div class="customization-section">
 
+
                         <h3>
                             Customize Graph
                         </h3>
 
 
+
+                        <!-- =========================
+                             COLORS
+                        ========================== -->
+
                         <div class="color-row">
 
 
-                            <!-- Background Color -->
+                            <!-- BACKGROUND COLOR -->
 
                             <div class="color-control">
 
@@ -259,12 +443,16 @@
                                     Background
                                 </label>
 
-                                <input type="color" id="backgroundColor" value="#4ce7b6">
+                                <input
+                                    type="color"
+                                    id="backgroundColor"
+                                    value="#4ce7b6">
 
                             </div>
 
 
-                            <!-- Border Color -->
+
+                            <!-- BORDER COLOR -->
 
                             <div class="color-control">
 
@@ -272,31 +460,59 @@
                                     Border
                                 </label>
 
-                                <input type="color" id="borderColor" value="#5cb1f6">
+                                <input
+                                    type="color"
+                                    id="borderColor"
+                                    value="#5cb1f6">
 
                             </div>
 
                         </div>
-                        <!-- Color Mode -->
+
+
+
+                        <!-- =========================
+                             COLOR MODE
+                        ========================== -->
 
                         <div class="input-group">
-                            <label for="colorMode">Color Mode</label>
+
+                            <label for="colorMode">
+                                Color Mode
+                            </label>
 
                             <select id="colorMode">
-                                <option value="custom">Custom Colors</option>
-                                <option value="highlight">Highlight Highest & Lowest</option>
-                                <option value="gradient">Value Gradient</option>
+
+                                <option value="custom">
+                                    Custom Colors
+                                </option>
+
+                                <option value="highlight">
+                                    Highlight Highest & Lowest
+                                </option>
+
+                                <option value="gradient">
+                                    Value Gradient
+                                </option>
+
                             </select>
+
                         </div>
 
 
-                        <!-- Grid / Legend -->
+
+                        <!-- =========================
+                             GRID / LEGEND
+                        ========================== -->
 
                         <div class="toggle-row">
 
                             <label>
 
-                                <input type="checkbox" id="showGrid" checked>
+                                <input
+                                    type="checkbox"
+                                    id="showGrid"
+                                    checked>
 
                                 Show Grid
 
@@ -305,7 +521,10 @@
 
                             <label>
 
-                                <input type="checkbox" id="showLegend" checked>
+                                <input
+                                    type="checkbox"
+                                    id="showLegend"
+                                    checked>
 
                                 Show Legend
 
@@ -316,24 +535,58 @@
                     </div>
 
 
+
                     <!-- =========================
-                         BUTTONS
+                         GRAPH BUTTONS
                     ========================== -->
 
                     <div class="graph-buttons">
 
-                        <button id="generateGraph" class="generate-btn">
+
+                        <!-- GENERATE -->
+
+                        <button
+                            id="generateGraph"
+                            class="generate-btn">
+
                             Generate Graph
+
                         </button>
 
 
-                        <button id="downloadGraph" class="download-btn">
+
+                        <!-- DOWNLOAD -->
+
+                        <button
+                            id="downloadGraph"
+                            class="download-btn">
+
                             Download Graph
+
                         </button>
 
 
-                        <button id="resetGraph" class="reset-btn">
+
+                        <!-- SAVE -->
+
+                        <button
+                            id="saveGraph"
+                            class="download-btn">
+
+                            Save Graph
+
+                        </button>
+
+
+
+                        <!-- RESET -->
+
+                        <button
+                            id="resetGraph"
+                            class="reset-btn">
+
                             Reset
+
                         </button>
 
                     </div>
@@ -341,18 +594,25 @@
                 </div>
 
 
+
                 <!-- =========================
                      RIGHT PANEL
                 ========================== -->
 
-                <div class="graph-preview" data-aos="fade-left">
+                <div
+                    class="graph-preview"
+                    data-aos="fade-left">
+
+
+                    <!-- =========================
+                         PREVIEW HEADER
+                    ========================== -->
 
                     <div class="preview-header">
 
                         <h2>
                             Graph Preview
                         </h2>
-
 
                         <span>
                             Live Preview
@@ -361,7 +621,10 @@
                     </div>
 
 
-                    <!-- Graph Canvas -->
+
+                    <!-- =========================
+                         CHART CONTAINER
+                    ========================== -->
 
                     <div class="chart-container">
 
@@ -378,18 +641,25 @@
     </main>
 
 
+
     <!-- =========================
          AOS JS
     ========================== -->
 
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script
+        src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+    </script>
+
 
 
     <!-- =========================
          GSAP
     ========================== -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+    </script>
+
 
 
     <!-- =========================
@@ -413,13 +683,15 @@
     </script>
 
 
+
     <!-- =========================
          GSAP ANIMATION
     ========================== -->
 
     <script>
 
-        const createTimeline = gsap.timeline();
+        const createTimeline =
+            gsap.timeline();
 
 
         createTimeline
@@ -435,64 +707,119 @@
             })
 
 
-            .from(".nav-links a, .nav-create-btn", {
+            .from(
+                ".nav-links a, .nav-create-btn",
+                {
 
-                y: -20,
+                    y: -20,
 
-                opacity: 0,
+                    opacity: 0,
 
-                duration: 0.4,
+                    duration: 0.4,
 
-                stagger: 0.1
+                    stagger: 0.1
 
-            }, "-=0.4")
+                },
+
+                "-=0.4"
+            )
 
 
-            .from(".create-heading .section-tagline", {
+            .from(
+                ".create-heading .section-tagline",
+                {
+
+                    y: 20,
+
+                    opacity: 0,
+
+                    duration: 0.5
+
+                }
+            )
+
+
+            .from(
+                ".create-heading h1",
+                {
+
+                    y: 30,
+
+                    opacity: 0,
+
+                    duration: 0.7
+
+                },
+
+                "-=0.2"
+            );
+
+
+        gsap.from(
+            ".graph-buttons button",
+            {
 
                 y: 20,
 
                 opacity: 0,
 
-                duration: 0.5
+                duration: 0.6,
 
-            })
+                stagger: 0.12,
 
+                delay: 0.8
 
-            .from(".create-heading h1", {
-
-                y: 30,
-
-                opacity: 0,
-
-                duration: 0.7
-
-            }, "-=0.2");
-
-
-        gsap.from(".graph-buttons button", {
-
-            y: 20,
-
-            opacity: 0,
-
-            duration: 0.6,
-
-            stagger: 0.12,
-
-            delay: 0.8
-
-        });
+            }
+        );
 
     </script>
+
+
+
+    <!-- =========================
+         NAVBAR JS
+    ========================== -->
+
+    <script src="js/navbar.js"></script>
+
 
 
     <!-- =========================
          GRAPH FUNCTIONALITY
     ========================== -->
 
-    <script src="js/navbar.js"></script>
     <script src="js/graph.js"></script>
+
+
+
+    <!-- =========================
+         ADMIN PANEL VISIBILITY
+    ========================== -->
+
+    <script>
+
+        const currentUser =
+            JSON.parse(localStorage.getItem("user"));
+
+        const adminPanelLink =
+            document.getElementById("adminPanelLink");
+
+        const mobileAdminPanelLink =
+            document.getElementById("mobileAdminPanelLink");
+
+
+        if (
+            currentUser &&
+            currentUser.role === "admin"
+        ) {
+
+            adminPanelLink.style.display = "block";
+
+            mobileAdminPanelLink.style.display = "block";
+
+        }
+
+    </script>
 
 
 </body>

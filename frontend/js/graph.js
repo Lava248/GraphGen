@@ -1,7 +1,17 @@
+// =========================
+// AUTHENTICATION CHECK
+// =========================
 
+const pageToken = localStorage.getItem("token");
+
+if (!pageToken) {
+    alert("Please login to create a graph.");
+    window.location.href = "login.html";
+}
 // =========================
 // GET HTML ELEMENTS
 // =========================
+
 
 const backgroundColor =
     document.getElementById("backgroundColor");
@@ -41,6 +51,9 @@ const generateButton =
 
 const downloadButton =
     document.getElementById("downloadGraph");
+
+const saveButton =
+    document.getElementById("saveGraph");
 
 const resetButton =
     document.getElementById("resetGraph");
@@ -802,7 +815,7 @@ function valuesForSlices(count) {
 
         (_, index) =>
             sliceColors[
-                index % sliceColors.length
+            index % sliceColors.length
             ]
 
     );
@@ -971,3 +984,142 @@ resetButton.addEventListener(
     }
 );
 
+// =========================
+// SAVE GRAPH
+// =========================
+
+saveButton.addEventListener(
+    "click",
+    async function () {
+
+        // Check if graph exists
+        if (graphChart === null) {
+
+            alert(
+                "Please generate a graph first."
+            );
+
+            return;
+
+        }
+
+
+        // Get JWT token
+        const token =
+            localStorage.getItem("token");
+
+
+        // User must be logged in
+        if (!token) {
+
+            alert(
+                "Please login before saving a graph."
+            );
+
+            window.location.href =
+                "login.html";
+
+            return;
+
+        }
+
+
+        // Get graph data
+        const title =
+            graphTitle.value.trim();
+
+        const labels =
+            xData.value
+                .split(",")
+                .map(item => item.trim());
+
+        const values =
+            yData.value
+                .split(",")
+                .map(item => Number(item.trim()));
+
+        // Validate graph data
+
+        if (!title) {
+            alert("Please enter a graph title.");
+            return;
+        }
+
+        if (labels.length === 0 || values.length === 0) {
+            alert("Please enter labels and data.");
+            return;
+        }
+
+        if (labels.length !== values.length) {
+            alert("Number of labels and data values must be the same.");
+            return;
+        }
+
+        if (values.some(value => Number.isNaN(value))) {
+            alert("Data values must be numbers.");
+            return;
+        }
+
+        const selectedType =
+            graphType.value;
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/graphs/save",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${token}`
+                        },
+
+                        body: JSON.stringify({
+                            title: title,
+                            graphType: selectedType,
+                            labels: labels,
+                            data: values
+                        })
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                alert(
+                    result.message ||
+                    "Failed to save graph."
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Graph saved successfully!"
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Save graph error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to server."
+            );
+
+        }
+
+    }
+);
