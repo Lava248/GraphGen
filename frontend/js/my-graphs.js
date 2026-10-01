@@ -221,7 +221,7 @@ document.addEventListener(
                                         Data:
                                     </strong>
 
-                                    ${graph.data.join(", ")}
+                                    ${formatGraphData(graph.data)}
 
                                 </p>
 
@@ -364,7 +364,9 @@ document.addEventListener(
                     "pie",
                     "doughnut",
                     "radar",
-                    "polarArea"
+                    "polarArea",
+                    "scatter",
+                    "bubble"
                 ].includes(chartType)
             ) {
 
@@ -681,6 +683,24 @@ document.addEventListener(
                     /'/g,
                     "&#039;"
                 );
+
+        }
+
+
+        function formatGraphData(
+            data
+        ) {
+
+            return data
+                .map(value =>
+                    typeof value === "object"
+                        ? value.r === undefined
+                            ? `${value.label ? `${value.label}: ` : ""}(${value.x}, ${value.y})`
+                            : `${value.label ? `${value.label}: ` : ""}(${value.x}, ${value.y}, r: ${value.r})`
+                        : value
+                )
+                .map(escapeHTML)
+                .join(", ");
 
         }
 

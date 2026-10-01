@@ -173,6 +173,8 @@ body {
     background: rgba(255, 255, 255, 0.05);
     color: white;
 
+    color-scheme: dark;
+
     outline: none;
 
     transition: 0.3s ease;
@@ -188,6 +190,13 @@ body {
 
 .input-group select option {
     background: #07111f;
+    color: #ffffff;
+}
+
+/* Native select popups need an opaque control surface. */
+.input-group select {
+    background-color: #0b1726;
+    appearance: auto;
 }
 
 
@@ -369,7 +378,9 @@ body {
 @media (max-width: 900px) {
 
     .graph-creator-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
     }
 
     .create-page {
@@ -379,6 +390,9 @@ body {
     .graph-settings,
     .graph-preview {
         padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .color-row,
@@ -392,6 +406,16 @@ body {
 
     .chart-container {
         height: 320px;
+        max-width: 100%;
+    }
+
+    .chart-container canvas {
+        max-width: 100% !important;
+    }
+
+    .preview-header {
+        gap: 12px;
+        flex-wrap: wrap;
     }
 
 }
@@ -417,6 +441,19 @@ body {
 
 .input-group input[type="text"]:focus,
 .input-group select:focus {
+    transform: translateY(-2px);
+
+    border-color: #4ce7b6;
+
+    box-shadow:
+        0 0 20px rgba(76, 231, 182, 0.12);
+}
+
+.input-group select:focus {
+    transform: none;
+}
+
+.input-group input[type="text"]:focus {
     transform: translateY(-2px);
 
     border-color: #4ce7b6;

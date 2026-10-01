@@ -25,7 +25,7 @@ const graphSchema = new mongoose.Schema(
         },
 
         data: {
-            type: [Number],
+            type: [mongoose.Schema.Types.Mixed],
             default: []
         }
     },

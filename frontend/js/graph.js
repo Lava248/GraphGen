@@ -40,6 +40,18 @@ const xData =
 const yData =
     document.getElementById("yData");
 
+const pointNames =
+    document.getElementById("pointNames");
+
+const pointNamesGroup =
+    document.getElementById("pointNamesGroup");
+
+const radiusData =
+    document.getElementById("radiusData");
+
+const radiusDataGroup =
+    document.getElementById("radiusDataGroup");
+
 const graphType =
     document.getElementById("graphType");
 
@@ -203,6 +215,29 @@ function getSmartColors(values) {
 }
 
 
+function getColorValues(values) {
+
+    return values.map(value =>
+        typeof value === "object"
+            ? value.y
+            : value
+    );
+
+}
+
+
+function updateRadiusInput() {
+
+    pointNamesGroup.hidden =
+        graphType.value !== "scatter" &&
+        graphType.value !== "bubble";
+
+    radiusDataGroup.hidden =
+        graphType.value !== "bubble";
+
+}
+
+
 // =========================
 // GENERATE GRAPH
 // =========================
@@ -238,6 +273,25 @@ generateButton.addEventListener(
                 .split(",")
                 .map(item => Number(item.trim()));
 
+        const selectedType =
+            graphType.value;
+
+        const radiusValues =
+            radiusData.value
+                .split(",")
+                .map(item => Number(item.trim()));
+
+        const names =
+            pointNames.value.trim()
+                ? pointNames.value
+                    .split(",")
+                    .map(item => item.trim())
+                : [];
+
+        const isPointGraph =
+            selectedType === "scatter" ||
+            selectedType === "bubble";
+
 
         // =========================
         // VALIDATION
@@ -269,6 +323,19 @@ generateButton.addEventListener(
 
             alert(
                 "Please enter Y-axis data."
+            );
+
+            return;
+
+        }
+
+        if (
+            selectedType === "bubble" &&
+            !radiusData.value.trim()
+        ) {
+
+            alert(
+                "Please enter bubble radius data."
             );
 
             return;
@@ -308,6 +375,71 @@ generateButton.addEventListener(
 
         }
 
+        if (
+            isPointGraph &&
+            labels.some(label =>
+                label === "" ||
+                !Number.isFinite(Number(label))
+            )
+        ) {
+
+            alert(
+                "X-axis data must contain only numbers for Scatter and Bubble charts."
+            );
+
+            return;
+
+        }
+
+        if (
+            isPointGraph &&
+            names.length > 0 &&
+            names.length !== labels.length
+        ) {
+
+            alert(
+                "Point names must have the same number of values as the X-axis data."
+            );
+
+            return;
+
+        }
+
+        if (
+            isPointGraph &&
+            yData.value.split(",").some(item =>
+                item.trim() === "" ||
+                !Number.isFinite(Number(item.trim()))
+            )
+        ) {
+
+            alert(
+                "Y-axis data must contain only numbers for Scatter and Bubble charts."
+            );
+
+            return;
+
+        }
+
+        if (
+            selectedType === "bubble" &&
+            (
+                radiusValues.length !== labels.length ||
+                radiusValues.some(value =>
+                    !Number.isFinite(value) ||
+                    value <= 0
+                )
+            )
+        ) {
+
+            alert(
+                "Bubble radius data must contain matching positive numbers."
+            );
+
+            return;
+
+        }
+
 
         // =========================
         // REMOVE OLD GRAPH
@@ -320,14 +452,6 @@ generateButton.addEventListener(
             graphChart = null;
 
         }
-
-
-        // =========================
-        // GET GRAPH TYPE
-        // =========================
-
-        const selectedType =
-            graphType.value;
 
 
         // =========================
@@ -391,11 +515,35 @@ generateButton.addEventListener(
         // DATASET
         // =========================
 
+        const pointData =
+            labels.map((label, index) => {
+
+                const point = {
+                    x: Number(label),
+                    y: values[index]
+                };
+
+                if (selectedType === "bubble") {
+                    point.r = radiusValues[index];
+                }
+
+                if (names[index]) {
+                    point.label = names[index];
+                }
+
+                return point;
+
+            });
+
+
         const dataset = {
 
             label: title,
 
-            data: values,
+            data:
+                isPointGraph
+                    ? pointData
+                    : values,
 
             backgroundColor:
                 datasetBackground,
@@ -543,6 +691,37 @@ generateButton.addEventListener(
 
         };
 
+        if (isPointGraph) {
+
+            chartOptions.plugins.tooltip.callbacks = {
+
+                title: function (context) {
+
+                    return context[0].raw.label || "";
+
+                },
+
+                label: function (context) {
+
+                    const point = context.raw;
+
+                    const tooltipData = [
+                        `X: ${point.x}`,
+                        `Y: ${point.y}`
+                    ];
+
+                    if (point.r !== undefined) {
+                        tooltipData.push(`Size: ${point.r}`);
+                    }
+
+                    return tooltipData;
+
+                }
+
+            };
+
+        }
+
 
         // =========================
         // SCALES
@@ -647,7 +826,9 @@ generateButton.addEventListener(
                 data: {
 
                     labels:
-                        labels,
+                        isPointGraph
+                            ? []
+                            : labels,
 
                     datasets: [
                         dataset
@@ -690,7 +871,7 @@ function updateGraph() {
     // =========================
 
     const smartColors =
-        getSmartColors(values);
+        getSmartColors(getColorValues(values));
 
 
     // =========================
@@ -853,6 +1034,12 @@ colorMode.addEventListener(
 );
 
 
+graphType.addEventListener(
+    "change",
+    updateRadiusInput
+);
+
+
 // =========================
 // GRID EVENT
 // =========================
@@ -948,9 +1135,15 @@ resetButton.addEventListener(
 
         yData.value = "";
 
+        pointNames.value = "";
+
+        radiusData.value = "";
+
 
         graphType.value =
             "line";
+
+        updateRadiusInput();
 
 
         colorMode.value =
@@ -1038,6 +1231,18 @@ saveButton.addEventListener(
                 .split(",")
                 .map(item => Number(item.trim()));
 
+        const radiusValues =
+            radiusData.value
+                .split(",")
+                .map(item => Number(item.trim()));
+
+        const names =
+            pointNames.value.trim()
+                ? pointNames.value
+                    .split(",")
+                    .map(item => item.trim())
+                : [];
+
         // Validate graph data
 
         if (!title) {
@@ -1063,6 +1268,78 @@ saveButton.addEventListener(
         const selectedType =
             graphType.value;
 
+        const isPointGraph =
+            selectedType === "scatter" ||
+            selectedType === "bubble";
+
+        if (
+            isPointGraph &&
+            labels.some(label =>
+                label === "" ||
+                !Number.isFinite(Number(label))
+            )
+        ) {
+            alert("X-axis data must contain only numbers for Scatter and Bubble charts.");
+            return;
+        }
+
+        if (
+            isPointGraph &&
+            names.length > 0 &&
+            names.length !== labels.length
+        ) {
+            alert("Point names must have the same number of values as the X-axis data.");
+            return;
+        }
+
+        if (
+            isPointGraph &&
+            yData.value.split(",").some(item =>
+                item.trim() === "" ||
+                !Number.isFinite(Number(item.trim()))
+            )
+        ) {
+            alert("Y-axis data must contain only numbers for Scatter and Bubble charts.");
+            return;
+        }
+
+        if (
+            selectedType === "bubble" &&
+            (
+                !radiusData.value.trim() ||
+                radiusValues.length !== labels.length ||
+                radiusValues.some(value =>
+                    !Number.isFinite(value) ||
+                    value <= 0
+                )
+            )
+        ) {
+            alert("Bubble radius data must contain matching positive numbers.");
+            return;
+        }
+
+        const graphData =
+            isPointGraph
+                ? labels.map((label, index) => {
+
+                    const point = {
+                        x: Number(label),
+                        y: values[index]
+                    };
+
+                    if (selectedType === "bubble") {
+                        point.r = radiusValues[index];
+                    }
+
+                    if (names[index]) {
+                        point.label = names[index];
+                    }
+
+                    return point;
+
+                })
+                : values;
+
 
         try {
 
@@ -1081,7 +1358,7 @@ saveButton.addEventListener(
                             title: title,
                             graphType: selectedType,
                             labels: labels,
-                            data: values
+                            data: graphData
                         })
                     }
                 );
